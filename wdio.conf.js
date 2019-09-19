@@ -205,8 +205,13 @@ exports.config = {
     /**
      * Runs after a Cucumber scenario
      */
-    // afterScenario: function (uri, feature, scenario, result, sourceLocation) {
-    // },
+    afterScenario: function (uri, feature, scenario, result, sourceLocation) {
+      // Work around wdio reusing the same sessions for every scenario in a file
+      // which causes application state to persist between scenarios.
+      if(scenario.tags && scenario.tags.some((a => a.name === '@cleanState'))) {
+        browser.reloadSession();
+      }
+    },
     /**
      * Runs after a Cucumber feature
      */
