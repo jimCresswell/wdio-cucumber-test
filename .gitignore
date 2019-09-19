@@ -1,5 +1,6 @@
-### Logs ###
+### Logs and test results ###
 allure-results/
+allure-reports/
 
 ### Node ###
 node_modules/

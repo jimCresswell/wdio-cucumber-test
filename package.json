@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/wdio wdio.conf.js"
+    "test": "./node_modules/.bin/wdio wdio.conf.js",
+    "report:generate": "./node_modules/.bin/allure generate --clean ./allure-results -o ./allure-reports",
+    "report:serve": "./node_modules/.bin/static -p 8000 ./allure-reports",
+    "report:open": "./node_modules/.bin/open-cli http://127.0.0.1:8000",
+    "report": "npm run report:generate && (npm run report:open & npm run report:serve)"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +24,10 @@
     "@wdio/cucumber-framework": "^5.13.0",
     "@wdio/local-runner": "^5.13.1",
     "@wdio/spec-reporter": "^5.12.1",
+    "allure-commandline": "^2.13.0",
     "chai": "^4.2.0",
     "chromedriver": "^77.0.0",
+    "open-cli": "^5.0.0",
     "wdio-chromedriver-service": "^5.0.2"
   }
 }
