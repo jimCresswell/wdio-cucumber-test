@@ -2,11 +2,11 @@ Feature: The site is live
 
     @sanity
     Scenario: The front page loads
-    As a user when I visit the site I want it to be working.
-    There is no given step because there is no state to set up.
+      As a user when I visit the site I want it to be working.
+      There is no given step because there is no state to set up.
 
-        When I visit the site
-        Then The front page is visible
+      When I visit the site
+      Then The front page is visible
 
     @smoke @cleanState
     Scenario Outline: Basic login functionality works
