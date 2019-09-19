@@ -1,6 +1,6 @@
 # wdio-cucumber-test
 
-Testing out current state of integration between WebdriverIO and Cucumber.
+Testing out current state of integration between WebdriverIO and Cucumber. The driving feature file is [here](features/it_lives.feature).
 
 The tests operate again http://automationpractice.com/ .
 
